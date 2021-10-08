@@ -1,0 +1,58 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>student management system</title>
+<link th:href="@{/css/style.css}" rel="stylesheet" />
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+</head>
+<body>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand">SMS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/students}">Student Management System</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search">
+        <button class="btn btn-primary" type="button">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<br>
+<div class="container">
+<div class="row">
+<div class="col-mg-6 clo-md-6 col-sm-6 container justify-content-center card">
+<h1 class="text-center">Create Student</h1>
+<div class="card-body">
+<form th:action="@{/students}" th:object = "${student}" method="post">
+<div class="form-group">
+<label>Firstname</label>
+<input type="text" name = "firstname" th:field = "*{firstname}" placeholder = "Enter your firstname" class="form-control"></div>
+<div class="form-group">
+<label>Lastname</label>
+<input type="text" name = "lasttname" th:field = "*{lastname}" placeholder = "Enter your laststname" class="form-control"></div>
+<div class="form-group">
+<label>Email</label>
+<input type="text" name = "email" th:field = "*{email}" placeholder = "Enter your email" class="form-control"></div>
+<br>
+<div class="box-footer"><button type="submit" class="btn btn-primary">Submit</button></div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<br>
+<footer class="bg-dark text-center text-white">
+	<h5><span>CoreTech</span></h5>
+	<p>2021</p>
+</footer>
+</body>
+</html>
